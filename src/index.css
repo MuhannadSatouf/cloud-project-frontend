@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  color: #fff;
+  background-image: url("../resources/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+}
+
+.navbar {
+  width: 100%;
+}
+
+.menu {
+  float: right;
+  margin-right: 80px;
+}
+
+.icon {
+  float: left;
+  margin-left: 20px;
+}
+
+.logo {
+  color: #ff7200;
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 20px;
+  float: left;
+  padding-top: 10px;
+}
+
+ul {
+  float: right;
+  display: flex;
+  flex-direction: row;
+}
+
+ul li {
+  list-style: none;
+  margin-left: 62px;
+  margin-top: 27px;
+  font-size: 14px;
+  margin-right: 20px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+ul li a:hover {
+  color: #ff7200;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+
+body {
+  background: url("/resources/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  width: 100%;
+  max-width: 420px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  padding-bottom: 1rem;
+}
+
+a {
+  color: #ff7200;
+  text-decoration: none;
+}
+
+
+
+input[type="text"],
+input[type="password"],
+button,
+textarea {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+input {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+label,
+button {
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.5rem;
+  background: #ff7200;
+  color: white;
+  margin-top: 30px;
+}
+
+.instructions {
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  background: #000;
+  color: #fff;
+  padding: 0.25rem;
+  position: relative;
+  bottom: -10px;
+}
+
+.instructions>svg {
+  margin-right: 0.25rem;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.hide {
+  display: none;
+}
+
+.valid {
+  color: limegreen;
+  margin-left: 0.25rem;
+}
+
+.invalid {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.line {
+  display: inline-block;
+}

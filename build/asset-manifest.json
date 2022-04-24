@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/MuhannadSatouf/cloud-project-frontend/static/css/main.52b789c6.css",
+    "main.js": "/MuhannadSatouf/cloud-project-frontend/static/js/main.95ccc115.js",
+    "index.html": "/MuhannadSatouf/cloud-project-frontend/index.html",
+    "main.52b789c6.css.map": "/MuhannadSatouf/cloud-project-frontend/static/css/main.52b789c6.css.map",
+    "main.95ccc115.js.map": "/MuhannadSatouf/cloud-project-frontend/static/js/main.95ccc115.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52b789c6.css",
+    "static/js/main.95ccc115.js"
+  ]
+}
