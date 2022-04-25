@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useRef, useState, useEffect, useContext } from "react";
-import AuthContext from "./context/AuthProvider";
+import { Link } from "react-router-dom";
 
 const LOGIN_URL = "/login";
 
 const Login = () => {
-  const { setAuth } = useContext(AuthContext);
   const errRef = useRef();
 
   const [password, setPwd] = useState("");
@@ -13,6 +12,10 @@ const Login = () => {
   const [success, setSuccess] = useState(false);
 
   const [email, setEmail] = useState("");
+
+  const [loginStatus, setLoginStatus] = useState("");
+  axios.defaults.withCredentials = true;
+
   const userToSend = { email, password };
 
   useEffect(() => {
@@ -29,9 +32,8 @@ const Login = () => {
           console.log(res.data);
         });
 
-      const accessToken = response?.data?.accessToken;
+      setLoginStatus(res.data.email);
 
-      setAuth({ email, password, accessToken });
       setEmail("");
       setPwd("");
       setSuccess(true);
@@ -45,6 +47,7 @@ const Login = () => {
       } else {
         setErrMsg("Login Failed");
       }
+      setLoginStatus(response.data[0].username);
       errRef.current.focus();
     }
   };
@@ -69,7 +72,7 @@ const Login = () => {
               <div className="menu">
                 <ul>
                   <li>
-                    <a href="">Home</a>
+                    <Link to={"/home"}>Home</Link>
                   </li>
                   <li>
                     <a href="">Contact</a>
@@ -95,6 +98,7 @@ const Login = () => {
                   id="email"
                   autoComplete="off"
                   onChange={(e) => setEmail(e.target.value)}
+                  value={email}
                   required
                 />
 
@@ -114,8 +118,7 @@ const Login = () => {
                 Need an Account?
                 <br />
                 <span className="line">
-                  {/*put router link here*/}
-                  <a href="#">Sign Up</a>
+                  <Link to="/register">Sign Up</Link>
                 </span>
               </p>
             </section>

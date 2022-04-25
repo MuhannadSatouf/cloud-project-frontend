@@ -6,6 +6,7 @@ import {
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 //import axios from "./api/axios";
 
 const PASSWORD_REGEX =
@@ -86,7 +87,7 @@ const Register = () => {
         <section>
           <h1>Success!</h1>
           <p>
-            <a href="#">Sign In</a>
+            <Link to="/login">Sign In</Link>
           </p>
         </section>
       ) : (
@@ -197,6 +198,7 @@ const Register = () => {
                   <span aria-label="hashtag">#</span>{" "}
                   <span aria-label="dollar sign">$</span>{" "}
                   <span aria-label="percent">%</span>
+                  <span aria-label="score"> -</span>
                 </p>
 
                 <label htmlFor="confirm_pwd">
@@ -240,7 +242,7 @@ const Register = () => {
                 <br />
                 <span className="line">
                   {/*put router link here*/}
-                  <a href="#">Sign In</a>
+                  <Link to={"/login"}>Sign In</Link>
                 </span>
               </p>
             </section>
