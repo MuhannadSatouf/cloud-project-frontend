@@ -53,9 +53,14 @@ const Register = () => {
     }
     const userToSend = { email, firstName, lastName, birthDate, password };
     console.log(userToSend);
+    //https://obscure-bayou-38424.herokuapp.com liliia
     try {
       const response = await axios
-        .post("https://glacial-wave-97952.herokuapp.com/register", userToSend)
+        .post(
+          "https://obscure-bayou-38424.herokuapp.com/register",
+
+          userToSend
+        )
         .then((res) => {
           console.log(res.data);
         });

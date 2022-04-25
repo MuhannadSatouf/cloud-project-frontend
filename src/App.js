@@ -3,7 +3,7 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import Layout from "./components/Layout";
 import Missing from "./components/Missing";
-
+import Landing from "./components/Landing";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -11,6 +11,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         {/* public routes */}
+        <Route index element={<Login />} />
+        <Route path="landing" element={<Landing />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
 

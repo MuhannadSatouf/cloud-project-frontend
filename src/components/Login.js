@@ -13,7 +13,7 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
 
-  const [loginStatus, setLoginStatus] = useState("");
+  //const [loginStatus, setLoginStatus] = useState("");
   axios.defaults.withCredentials = true;
 
   const userToSend = { email, password };
@@ -24,15 +24,15 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    //https://obscure-bayou-38424.herokuapp.com liliia
     try {
       const response = await axios
-        .post("https://glacial-wave-97952.herokuapp.com/login", userToSend)
+        .post("https://obscure-bayou-38424.herokuapp.com/login", userToSend, {
+          withCredentials: false,
+        })
         .then((res) => {
           console.log(res.data);
         });
-
-      setLoginStatus(res.data.email);
 
       setEmail("");
       setPwd("");
@@ -47,7 +47,7 @@ const Login = () => {
       } else {
         setErrMsg("Login Failed");
       }
-      setLoginStatus(response.data[0].username);
+      //setLoginStatus(response.data[0].username);
       errRef.current.focus();
     }
   };
