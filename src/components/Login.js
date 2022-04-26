@@ -13,7 +13,6 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
 
-  //const [loginStatus, setLoginStatus] = useState("");
   axios.defaults.withCredentials = true;
 
   const userToSend = { email, password };
@@ -32,8 +31,9 @@ const Login = () => {
         })
         .then((res) => {
           console.log(res.data);
+          setCookie("email", email, 1);
         });
-
+      //setCookie("email", email, { path: "/" });
       setEmail("");
       setPwd("");
       setSuccess(true);
@@ -47,7 +47,7 @@ const Login = () => {
       } else {
         setErrMsg("Login Failed");
       }
-      //setLoginStatus(response.data[0].username);
+
       errRef.current.focus();
     }
   };
@@ -129,4 +129,10 @@ const Login = () => {
   );
 };
 
+function setCookie(cName, cValue, expDays) {
+  let date = new Date();
+  date.setTime(date.getTime() + expDays * 24 * 60 * 60 * 1000);
+  const expires = "expires=" + date.toUTCString();
+  document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
+}
 export default Login;
