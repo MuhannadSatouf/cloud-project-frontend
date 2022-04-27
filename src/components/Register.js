@@ -100,15 +100,14 @@ const Register = () => {
           <div className="header">
             <div className="navbar">
               <div className="icon">
-                <h2 className="logo">MyCirculation</h2>
+                <Link to={"/landing"}>
+                  <h2 className="logo">MyCirculation</h2>
+                </Link>
               </div>
               <div className="menu">
                 <ul>
                   <li>
                     <a href="">Home</a>
-                  </li>
-                  <li>
-                    <a href="">Contact</a>
                   </li>
                 </ul>
               </div>
@@ -194,8 +193,8 @@ const Register = () => {
                   <FontAwesomeIcon icon={faInfoCircle} />
                   8 to 24 characters.
                   <br />
-                  Must include uppercase and lowercase letters, a number and a
-                  special character.
+                  Must include uppercase and lowercase letters,
+                  <br /> a number and a special character.
                   <br />
                   Allowed special characters:{" "}
                   <span aria-label="exclamation mark">!</span>{" "}

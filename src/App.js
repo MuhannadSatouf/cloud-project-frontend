@@ -11,7 +11,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         {/* public routes */}
-        <Route index element={<Login />} />
+        <Route index element={<Landing />} />
         <Route path="landing" element={<Landing />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />

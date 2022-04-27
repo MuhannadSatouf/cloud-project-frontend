@@ -2,13 +2,14 @@ import { Link } from "react-router-dom";
 
 const Missing = () => {
   return (
-    <article style={{ padding: "100px" }}>
-      <h1>Oops!</h1>
-      <p>PLease Login first </p>
-      <div className="flexGrow">
-        <Link to="/">Visit Our Homepage</Link>
+    <div className="ops-page-background">
+      <div class="ops-page-container">
+        <h1>404</h1>
+        <h2>Oops! Page not found.</h2>
+        <p>We can't find the page you're looking for.</p>
+        <Link to={"/landing"}>Go back home</Link>
       </div>
-    </article>
+    </div>
   );
 };
 

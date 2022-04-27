@@ -35,6 +35,7 @@ html {
 .icon {
   float: left;
   margin-left: 20px;
+  margin-top: 10px;
 }
 
 .logo {
@@ -56,11 +57,12 @@ ul li {
   list-style: none;
   margin-left: 62px;
   margin-top: 27px;
-  font-size: 14px;
+  font-size: 26px;
   margin-right: 20px;
 }
 
 ul li a {
+
   text-decoration: none;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
@@ -72,6 +74,7 @@ ul li a:hover {
 }
 
 .main {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,17 +83,15 @@ ul li a:hover {
 }
 
 
-body {
-  background: url("/resources/background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-
-}
+body {}
 
 .App {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background: url("/resources/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200vh;
 }
 
 section {
@@ -150,15 +151,16 @@ button {
 
 .instructions {
   font-size: 0.75rem;
-  border-radius: 0.5rem;
   background: #000;
   color: #fff;
   padding: 0.25rem;
   position: relative;
   bottom: -10px;
+  width: 100%;
 }
 
 .instructions>svg {
+  width: 100%;
   margin-right: 0.25rem;
 }
 
@@ -191,4 +193,172 @@ button {
 
 .line {
   display: inline-block;
+}
+
+.btn button {
+  width: 100%;
+}
+
+
+
+
+.welcome-text-section {
+  width: 100%;
+  max-width: 100%;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0 0 70% 70%;
+  padding: 1rem;
+  background-color: #0080C1;
+  margin-top: -111px;
+}
+
+.par {
+  width: 70%;
+  margin-top: 10px;
+}
+
+.welcome-text-div {
+  margin-top: 10%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/*404 PAGE*/
+.ops-page {
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat", sans-serif;
+  min-height: 100vh;
+  background-image: linear-gradient(to right bottom, #f4006a, #f32261, #f1345a, #ee4153, #eb4d4d);
+}
+
+.ops-page h1 {
+  font-size: 20px;
+}
+
+.ops-page-container {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #343434
+}
+
+.ops-page-container h1 {
+  font-size: 200px;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 20px;
+  color: #fff;
+  text-shadow: 0 1px 0 #ccc,
+    0 2px 0 #c9c9c9,
+    0 3px 0 #bbb,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaa,
+    0 6px 1px rgba(0, 0, 0, .1),
+    0 0 5px rgba(0, 0, 0, .1),
+    0 1px 3px rgba(0, 0, 0, .3),
+    0 3px 5px rgba(0, 0, 0, .2),
+    0 5px 10px rgba(0, 0, 0, .25),
+    0 10px 10px rgba(0, 0, 0, .2),
+    0 20px 20px rgba(0, 0, 0, .15);
+
+}
+
+.ops-page-container h2 {
+  font-size: 40px;
+  color: #fff;
+  color: #fff;
+  text-shadow: 0 1px 0 #ccc,
+    0 2px 0 #c9c9c9,
+    0 1px 0 #bbb,
+    0 1px 0 #b9b9b9,
+    0 1px 0 #aaa,
+    0 6px 1px rgba(0, 0, 0, .1),
+    0 0 5px rgba(0, 0, 0, .1),
+    0 1px 3px rgba(0, 0, 0, .3),
+    0 3px 5px rgba(0, 0, 0, .2),
+    0 5px 10px rgba(0, 0, 0, .0),
+    0 10px 10px rgba(0, 0, 0, .2),
+    0 20px 20px rgba(0, 0, 0, .20);
+}
+
+.ops-page-container p {
+  color: #fff;
+  font-weight: 600;
+}
+
+.ops-page-container a {
+  text-decoration: none;
+  background: #fff;
+  color: #262626;
+  padding: 12px 24px;
+  display: inline-block;
+  border-radius: 25px;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: 0.4s;
+  font-weight: bold;
+  margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.ops-page-container a:hover {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #0d2530;
+
+  margin-top: auto;
+  width: 100%;
+
+}
+
+.about {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.contact-us-div {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.icon-footer {
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.about .title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff7200;
+}
+
+.contact-us-div .title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff7200;
+}
+
+.icon-footer .logo-footer {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff7200;
 }

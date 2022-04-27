@@ -1,15 +1,17 @@
 import axios from "axios";
-import { useRef, useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { useRef, useState, useEffect, Fragment } from "react";
+
+import { Link, Navigate } from "react-router-dom";
 
 const LOGIN_URL = "/login";
 
 const Login = () => {
   const errRef = useRef();
-
+  const checkLoginWithCookies = false;
   const [password, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
+  const [login, setLogin] = useState(false);
 
   const [email, setEmail] = useState("");
 
@@ -33,7 +35,7 @@ const Login = () => {
           console.log(res.data);
           setCookie("email", email, 1);
         });
-      //setCookie("email", email, { path: "/" });
+
       setEmail("");
       setPwd("");
       setSuccess(true);
@@ -50,32 +52,27 @@ const Login = () => {
 
       errRef.current.focus();
     }
+    //const checkLoginWithCookies = checkCookie();
+    //console.log(checkLoginWithCookies);
   };
 
   return (
     <>
-      {success ? (
-        <section>
-          <h1>You are logged in!</h1>
-          <br />
-          <p>
-            <a href="#">Go to Home</a>
-          </p>
-        </section>
+      {getCookie("email") !== "" && success ? (
+        <Navigate to="/home">Go to Home</Navigate>
       ) : (
         <>
           <div className="header">
             <div className="navbar">
               <div className="icon">
-                <h2 className="logo">MyCirculation</h2>
+                <Link to={"/landing"}>
+                  <h2 className="logo">MyCirculation</h2>
+                </Link>
               </div>
               <div className="menu">
                 <ul>
                   <li>
                     <Link to={"/home"}>Home</Link>
-                  </li>
-                  <li>
-                    <a href="">Contact</a>
                   </li>
                 </ul>
               </div>
@@ -135,4 +132,28 @@ function setCookie(cName, cValue, expDays) {
   const expires = "expires=" + date.toUTCString();
   document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
 }
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+const checkCookie = () => {
+  let user = getCookie("email");
+  console.log(getCookie("email"));
+  if (user === "" || user === null) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
 export default Login;

@@ -5,10 +5,8 @@ const Home = () => {
   const navigate = useNavigate();
 
   const logout = async () => {
-    // if used in more components, this should be in context
-    // axios to /logout endpoint
-
-    navigate("/linkpage");
+    document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    navigate("/landing");
   };
   function getCookie(cname) {
     let name = cname + "=";
@@ -35,7 +33,9 @@ const Home = () => {
           <br />
           <p>You are logged in!</p>
 
-          <button onClick={logout}>Sign Out</button>
+          <Link to={"/landing"}>
+            <button onClick={logout}>Sign Out</button>{" "}
+          </Link>
         </section>
       )}
     </Fragment>
