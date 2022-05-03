@@ -2,10 +2,10 @@ import { Outlet } from "react-router-dom";
 import Footer from "./footer";
 const Layout = () => {
   return (
-    <main className="App">
+    <div className="container">
       <Outlet />
       <Footer />
-    </main>
+    </div>
   );
 };
 

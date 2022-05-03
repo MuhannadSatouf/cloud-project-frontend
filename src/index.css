@@ -1,36 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-
 * {
   margin: 0;
   padding: 0;
 
 }
 
-html {
+html, body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 22px;
   color: #fff;
-  background-image: url("../resources/background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  margin: 0;
+  height: 150vh;
+  width: 100%;
+}
 
+
+#root {
+  height: 100%;
 }
 
 .header {
   display: flex;
   flex-direction: row;
   width: 100%;
-
 }
 
 .navbar {
-  width: 100%;
+  height: 100px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), #0d2530);
+
 }
 
-.menu {
-  float: right;
-  margin-right: 80px;
-}
+
 
 .icon {
   float: left;
@@ -44,13 +44,16 @@ html {
   font-family: Arial, Helvetica, sans-serif;
   padding-left: 20px;
   float: left;
-  padding-top: 10px;
+  margin-top: 20px;
 }
 
 ul {
   float: right;
   display: flex;
   flex-direction: row;
+  margin-right: 20px;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 ul li {
@@ -73,28 +76,25 @@ ul li a:hover {
   color: #ff7200;
 }
 
+
 .main {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin-top: 250px;
   align-items: center;
-  margin-top: 100px;
 }
 
-
-body {}
-
-.App {
+.container {
+  background-image: url("../resources/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
-  background: url("/resources/background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 200vh;
+  height: 100%;
 }
 
-section {
+.section {
   width: 100%;
   max-width: 420px;
   min-height: 400px;
@@ -102,7 +102,9 @@ section {
   flex-direction: column;
   justify-content: flex-start;
   padding: 1rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  background-color: #0d2530;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), #0d2530);
+
 }
 
 form {
@@ -200,34 +202,51 @@ button {
 }
 
 
-
-
-.welcome-text-section {
-  width: 100%;
-  max-width: 100%;
-  min-height: 600px;
+.welcome-text {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden;
-  border-radius: 0 0 70% 70%;
-  padding: 1rem;
-  background-color: #0080C1;
-  margin-top: -111px;
+  margin-top: 200px;
+
 }
 
-.par {
-  width: 70%;
-  margin-top: 10px;
+.welcome-text-section {
+  border-radius: 20px;
+  min-height: 600px;
+  width: 100%;
+  max-width: 720px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), #0d2530);
+
+
 }
 
 .welcome-text-div {
-  margin-top: 10%;
   text-align: center;
   align-items: center;
   display: flex;
   flex-direction: column;
 }
+
+.welcome-text-div h1 {
+  margin-bottom: 50px;
+}
+
+.welcome-text-div span {
+  color: #ff7200;
+  padding: 10px;
+}
+
+.par {
+  width: 90%;
+  margin-top: 10px;
+}
+
 
 /*404 PAGE*/
 .ops-page {
@@ -314,6 +333,7 @@ button {
   background: transparent;
   color: #fff;
   border: 1px solid #fff;
+
 }
 
 
@@ -321,17 +341,17 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #0d2530;
-
-  margin-top: auto;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), #0d2530);
   width: 100%;
-
+  margin-top: auto;
 }
+
 
 .about {
   margin-top: 20px;
   margin-left: 20px;
   margin-bottom: 20px;
+
 }
 
 .contact-us-div {

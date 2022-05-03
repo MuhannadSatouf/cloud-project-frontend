@@ -1,5 +1,6 @@
 import { useNavigate, Link, Navigate } from "react-router-dom";
 import { Fragment, useContext } from "react";
+import axios from "axios";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -8,6 +9,7 @@ const Home = () => {
     document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     navigate("/landing");
   };
+
   function getCookie(cname) {
     let name = cname + "=";
     let ca = document.cookie.split(";");
@@ -28,15 +30,34 @@ const Home = () => {
       {getCookie("email") === "" ? (
         <Navigate to="/login" />
       ) : (
-        <section>
-          <h1>Home</h1>
-          <br />
-          <p>You are logged in!</p>
+        <div className="app">
+          <div className="page">
+            <div className="navbar">
+              <div className="icon">
+                <Link to={"/landing"}>
+                  <h2 className="logo">MyCirculation</h2>
+                </Link>
+              </div>
+              <div className="menu">
+                <ul>
+                  <li>
+                    <Link to={"/landing"}>About</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-          <Link to={"/landing"}>
-            <button onClick={logout}>Sign Out</button>{" "}
-          </Link>
-        </section>
+          <section>
+            <h1>Home</h1>
+            <br />
+            <p>You are logged in!</p>
+
+            <Link to={"/landing"}>
+              <button onClick={logout}>Sign Out</button>{" "}
+            </Link>
+          </section>
+        </div>
       )}
     </Fragment>
   );

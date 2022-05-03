@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div className="footer">
@@ -13,11 +13,15 @@ function Footer() {
       </div>
       <div className="contact-us-div">
         <p className="title">Contact Us</p>
-        <p>EMAIL: mycirculation@mycirculation.com</p>
-        <p>Tele: +46 00 000 00 00</p>
+        <div className="text">
+          <p>EMAIL: mycirculation@mycirculation.com</p>
+          <p>Tele: +46 00 000 00 00</p>
+        </div>
       </div>
       <div className="icon-footer">
-        <h2 className="logo-footer">MyCirculation</h2>
+        <Link to={"/landing"}>
+          <h2 className="logo-footer">MyCirculation</h2>
+        </Link>
       </div>
     </div>
   );

@@ -89,7 +89,7 @@ const Register = () => {
   return (
     <>
       {success ? (
-        <section>
+        <section className="section">
           <h1>Success!</h1>
           <p>
             <Link to="/login">Sign In</Link>
@@ -97,7 +97,7 @@ const Register = () => {
         </section>
       ) : (
         <>
-          <div className="header">
+          <div>
             <div className="navbar">
               <div className="icon">
                 <Link to={"/landing"}>
@@ -115,7 +115,7 @@ const Register = () => {
           </div>
 
           <div className="main">
-            <section>
+            <section className="section">
               <p
                 ref={errRef}
                 className={errMsg ? "errmsg" : "offscreen"}

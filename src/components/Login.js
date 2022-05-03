@@ -62,7 +62,7 @@ const Login = () => {
         <Navigate to="/home">Go to Home</Navigate>
       ) : (
         <>
-          <div className="header">
+          <div>
             <div className="navbar">
               <div className="icon">
                 <Link to={"/landing"}>
@@ -78,8 +78,9 @@ const Login = () => {
               </div>
             </div>
           </div>
+
           <div className="main">
-            <section>
+            <section className="section">
               <p
                 ref={errRef}
                 className={errMsg ? "errmsg" : "offscreen"}

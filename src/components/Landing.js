@@ -7,31 +7,31 @@ const Landing = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <div>
-        <div className="header">
-          <div className="navbar">
-            <div className="icon">
-              <h2 className="logo">MyCirculation</h2>
-            </div>
-            <div className="menu">
-              <ul>
-                <li>
-                  <Link to={"/login"}>Login</Link>
-                </li>
-                <li>
-                  <Link to={"/register"}>Register</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
+    <>
+      <div className="navbar">
+        <div className="icon">
+          <h2 className="logo">MyCirculation</h2>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <Link to={"/login"}>Login</Link>
+            </li>
+            <li>
+              <Link to={"/register"}>Register</Link>
+            </li>
+            <li>
+              <Link to={"/home"}>Home</Link>
+            </li>
+          </ul>
         </div>
       </div>
       <div className="welcome-text">
         <section className="welcome-text-section">
           <div className="welcome-text-div">
             <h1>
-              Record your Heartbeat and <span>Blood pressure</span>
+              Record your <span> Heartbeat</span> and
+              <span>Blood pressure</span>
             </h1>
             <p className="par">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
@@ -42,7 +42,7 @@ const Landing = () => {
           </div>
         </section>
       </div>
-    </div>
+    </>
   );
 };
 
