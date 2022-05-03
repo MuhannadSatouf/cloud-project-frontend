@@ -10,9 +10,6 @@ const Home = () => {
     await axios
       .delete("https://obscure-bayou-38424.herokuapp.com/login", {
         withCredentials: false,
-        data: {
-          user: session,
-        },
       })
       .then(function (response) {
         console.log(response.data);
