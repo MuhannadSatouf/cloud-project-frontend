@@ -6,7 +6,20 @@ const Home = () => {
   const navigate = useNavigate();
 
   const logout = async () => {
-    document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    const session = localStorage.getItem("mySession");
+    await axios
+      .delete("https://obscure-bayou-38424.herokuapp.com/login", {
+        withCredentials: false,
+        data: {
+          user: session,
+        },
+      })
+      .then(function (response) {
+        console.log(response.data);
+        document.cookie =
+          "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      });
+
     navigate("/landing");
   };
 

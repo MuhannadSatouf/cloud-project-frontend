@@ -34,6 +34,7 @@ const Login = () => {
         .then((res) => {
           console.log(res.data);
           setCookie("email", email, 1);
+          saveSession(res.data);
         });
 
       setEmail("");
@@ -147,14 +148,9 @@ function getCookie(cname) {
   }
   return "";
 }
-const checkCookie = () => {
-  let user = getCookie("email");
-  console.log(getCookie("email"));
-  if (user === "" || user === null) {
-    return false;
-  } else {
-    return true;
-  }
-};
+
+function saveSession(session) {
+  localStorage.setItem("mySession", session);
+}
 
 export default Login;
