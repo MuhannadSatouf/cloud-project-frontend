@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRef, useState, useEffect, Fragment } from "react";
 
 import { Link, Navigate } from "react-router-dom";
+import HomeComponent from "./HomeComponent";
 
 const LOGIN_URL = "/login";
 
@@ -60,7 +61,7 @@ const Login = () => {
   return (
     <>
       {getCookie("email") !== "" && success ? (
-        <Navigate to="/home">Go to Home</Navigate>
+        <HomeComponent />
       ) : (
         <>
           <div>
@@ -150,7 +151,7 @@ function getCookie(cname) {
 }
 
 function saveSession(session) {
-  localStorage.setItem("mySession", session);
+  sessionStorage.setItem("mySession", JSON.stringify(session));
 }
 
 export default Login;

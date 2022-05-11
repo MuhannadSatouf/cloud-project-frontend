@@ -58,8 +58,10 @@ const Register = () => {
       const response = await axios
         .post(
           "https://obscure-bayou-38424.herokuapp.com/register",
-
-          userToSend
+          userToSend,
+          {
+            withCredentials: false,
+          }
         )
         .then((res) => {
           console.log(res.data);
@@ -89,12 +91,7 @@ const Register = () => {
   return (
     <>
       {success ? (
-        <section className="section">
-          <h1>Success!</h1>
-          <p>
-            <Link to="/login">Sign In</Link>
-          </p>
-        </section>
+        renderSection()
       ) : (
         <>
           <div>
@@ -254,6 +251,17 @@ const Register = () => {
         </>
       )}
     </>
+  );
+};
+
+const renderSection = () => {
+  return (
+    <section className="section">
+      <h1>Success!</h1>
+      <p>
+        <Link to="/login">Sign In</Link>
+      </p>
+    </section>
   );
 };
 

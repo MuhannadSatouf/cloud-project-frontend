@@ -1,11 +1,8 @@
-import { useNavigate } from "react-router-dom";
 import Login from "./Login";
 import Home from "./Home";
 import { Link } from "react-router-dom";
 
 const Landing = () => {
-  const navigate = useNavigate();
-
   return (
     <>
       <div className="navbar">
