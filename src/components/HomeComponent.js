@@ -30,7 +30,7 @@ function HomeComponent() {
 
   let today = new Date();
   let date =
-    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDay();
+    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
 
   useEffect(() => {
     if (session === null) {
@@ -42,8 +42,6 @@ function HomeComponent() {
       setBirthDate(session.Date);
       if (records.length === 0) {
         getRecords(setRecords, session);
-
-        console.log("Here is your array " + records);
       }
     }
   });
@@ -53,7 +51,7 @@ function HomeComponent() {
       <Header_home />
       <div className="main">
         <h1>Hello: {userName}</h1>
-        <h1>Today is:{date}</h1>
+        <h1>Today is:{todayDate}</h1>
         <DynamicTable {...records} />
         <Link to={"/landing"}>
           <button onClick={logout2}>Sign Out</button>
@@ -76,7 +74,7 @@ const createRecord = async () => {
   };
   await axios
     .post(
-      "https://obscure-bayou-38424.herokuapp.com/records/{session._id}",
+      "https://obscure-bayou-38424.herokuapp.com/records/" + session._id,
       object,
       {
         withCredentials: false,
@@ -96,9 +94,7 @@ const getRecords = async (setRecords, session) => {
       withCredentials: false,
     })
     .then((res) => {
-      console.log(res.data.error);
       setRecords(res.data);
-      //console.log("The responds from get records" + res.data);
     })
     .catch(function (error) {
       console.log(error);

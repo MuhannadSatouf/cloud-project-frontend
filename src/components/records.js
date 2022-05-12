@@ -1,10 +1,7 @@
 const DynamicTable = (records) => {
   const recordsArray = Object.entries(records).map((entry) => entry[1]);
-  console.log("array length " + recordsArray.length);
-  console.log("array length " + recordsArray);
-  console.log(recordsArray.includes("No records found"));
   let check = recordsArray.includes("No records found");
-  console.log("check value " + check);
+
   if (recordsArray.length > 0 && check === false) {
     return (
       <div className="table">
@@ -14,20 +11,20 @@ const DynamicTable = (records) => {
         <table className="styled-table">
           <thead>
             <tr>
-              <th>Diastolic</th>
-              <th>HeartRate</th>
-              <th>Systolic</th>
               <th>Record Date</th>
+              <th>Diastolic</th>
+              <th>Systolic</th>
+              <th>HeartRate</th>
             </tr>
           </thead>
 
           <tbody>
             {recordsArray.map((emp) => (
               <tr className="active-row">
+                <td>{formatDate(emp.updatedAt)}</td>
                 <td>{emp.diastolic}</td>
-                <td>{emp.heartRate}</td>
                 <td>{emp.systolic}</td>
-                <td>{emp.updatedAt}</td>
+                <td>{emp.heartRate}</td>
               </tr>
             ))}
           </tbody>
@@ -47,10 +44,10 @@ const DynamicTable = (records) => {
             <table className="styled-table">
               <thead>
                 <tr>
-                  <th>Diastolic</th>
-                  <th>HeartRate</th>
-                  <th>Systolic</th>
                   <th>Record Date</th>
+                  <th>Diastolic</th>
+                  <th>Systolic</th>
+                  <th>HeartRate</th>
                 </tr>
               </thead>
               <tbody>
@@ -68,4 +65,14 @@ const DynamicTable = (records) => {
     );
   }
 };
+
+function formatDate(value) {
+  const date = new Date(value);
+  var day = date.getDate();
+  var month = date.getMonth();
+  var year = date.getFullYear();
+
+  const formatDate = year + "-" + month + "-" + day;
+  return formatDate;
+}
 export default DynamicTable;
