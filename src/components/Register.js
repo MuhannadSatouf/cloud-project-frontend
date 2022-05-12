@@ -52,7 +52,7 @@ const Register = () => {
       return;
     }
     const userToSend = { email, firstName, lastName, birthDate, password };
-    console.log(userToSend);
+    console.log("User object  " + userToSend);
     //https://obscure-bayou-38424.herokuapp.com liliia
     try {
       const response = await axios
