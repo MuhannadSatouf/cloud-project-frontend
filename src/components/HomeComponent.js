@@ -70,7 +70,7 @@ const createRecord = async () => {
       "https://obscure-bayou-38424.herokuapp.com/records/62652e091cce9bf48d626743",
       object,
       {
-        withCredentials: false,
+        withCredentials: true,
       }
     )
     .then((res) => {
@@ -84,7 +84,8 @@ const createRecord = async () => {
 const getRecords = async () => {
   await axios
     .get(
-      "https://obscure-bayou-38424.herokuapp.com/records/62652e091cce9bf48d626743"
+      "https://obscure-bayou-38424.herokuapp.com/records/62652e091cce9bf48d626743",
+      { withCredentials: true }
     )
     .then((res) => {
       console.log(res.data);
