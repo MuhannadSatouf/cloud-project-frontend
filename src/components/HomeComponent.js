@@ -66,9 +66,13 @@ const createRecord = async () => {
     heartRate,
   };
   await axios
-    .post("http://localhost:5000/records/62652e091cce9bf48d626743", object, {
-      withCredentials: false,
-    })
+    .post(
+      "https://obscure-bayou-38424.herokuapp.com/records/62652e091cce9bf48d626743",
+      object,
+      {
+        withCredentials: false,
+      }
+    )
     .then((res) => {
       console.log(res.data);
     })
@@ -79,7 +83,9 @@ const createRecord = async () => {
 //"https://obscure-bayou-38424.herokuapp.com/records/62652e091cce9bf48d626743"
 const getRecords = async () => {
   await axios
-    .get("http://localhost:5000/records/62652e091cce9bf48d626743")
+    .get(
+      "https://obscure-bayou-38424.herokuapp.com/records/62652e091cce9bf48d626743"
+    )
     .then((res) => {
       console.log(res.data);
     })
