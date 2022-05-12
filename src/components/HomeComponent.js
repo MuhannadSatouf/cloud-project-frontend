@@ -7,7 +7,6 @@ import Landing from "./Landing";
 import DynamicTable from "../components/records";
 
 const logout2 = async () => {
-  const session = localStorage.getItem("mySession");
   await axios
     .delete("https://obscure-bayou-38424.herokuapp.com/login", {
       withCredentials: false,
@@ -18,6 +17,7 @@ const logout2 = async () => {
         "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     });
   <Landing />;
+  //sessionStorage.removeItem("mySession");
 };
 
 function HomeComponent() {
@@ -25,17 +25,27 @@ function HomeComponent() {
   const [birthDate, setBirthDate] = useState("");
   const [userId, setUserId] = useState("");
   const [todayDate, setTodayDate] = useState("");
+  const [records, setRecords] = useState([]);
   const session = JSON.parse(sessionStorage.getItem("mySession"));
-  console.log(session);
+
   let today = new Date();
   let date =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDay();
 
   useEffect(() => {
-    setUserName(session.firstName + " " + session.lastName);
-    setTodayDate(date);
-    setUserId(session._id);
-    setBirthDate(session.Date);
+    if (session === null) {
+      <Landing />;
+    } else {
+      setUserName(session.firstName + " " + session.lastName);
+      setTodayDate(date);
+      setUserId(session._id);
+      setBirthDate(session.Date);
+      if (records.length === 0) {
+        getRecords(setRecords, session);
+
+        console.log("Here is your array " + records);
+      }
+    }
   });
 
   return (
@@ -44,12 +54,11 @@ function HomeComponent() {
       <div className="main">
         <h1>Hello: {userName}</h1>
         <h1>Today is:{date}</h1>
-        <DynamicTable />
+        <DynamicTable {...records} />
         <Link to={"/landing"}>
           <button onClick={logout2}>Sign Out</button>
         </Link>
         <button onClick={createRecord}>Create post</button>
-        <button onClick={getRecords}>get post</button>
       </div>
     </div>
   );
@@ -67,10 +76,10 @@ const createRecord = async () => {
   };
   await axios
     .post(
-      "https://obscure-bayou-38424.herokuapp.com/records/62652e091cce9bf48d626743",
+      "https://obscure-bayou-38424.herokuapp.com/records/{session._id}",
       object,
       {
-        withCredentials: true,
+        withCredentials: false,
       }
     )
     .then((res) => {
@@ -80,15 +89,16 @@ const createRecord = async () => {
       console.log(error);
     });
 };
-//"https://obscure-bayou-38424.herokuapp.com/records/62652e091cce9bf48d626743"
-const getRecords = async () => {
+
+const getRecords = async (setRecords, session) => {
   await axios
-    .get(
-      "https://obscure-bayou-38424.herokuapp.com/records/62652e091cce9bf48d626743",
-      { withCredentials: true }
-    )
+    .get("https://obscure-bayou-38424.herokuapp.com/records/" + session._id, {
+      withCredentials: false,
+    })
     .then((res) => {
-      console.log(res.data);
+      console.log(res.data.error);
+      setRecords(res.data);
+      //console.log("The responds from get records" + res.data);
     })
     .catch(function (error) {
       console.log(error);
