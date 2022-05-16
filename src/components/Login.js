@@ -34,7 +34,6 @@ const Login = () => {
           withCredentials: false,
         })
         .then((res) => {
-          console.log(res.data);
           setCookie("email", email, 1);
           saveSession(res.data);
         });
@@ -55,8 +54,6 @@ const Login = () => {
 
       errRef.current.focus();
     }
-    //const checkLoginWithCookies = checkCookie();
-    //console.log(checkLoginWithCookies);
   };
 
   return (

@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import Header_home from "./Header_home";
 import axios from "axios";
 import Landing from "./Landing";
-
-import DynamicTable from "../components/records";
+import CreateRecord from "./CreateRecords";
+import DynamicTable from "../components/Records";
 
 const logout2 = async () => {
   await axios
@@ -53,40 +53,15 @@ function HomeComponent() {
         <h1>Hello: {userName}</h1>
         <h1>Today is:{todayDate}</h1>
         <DynamicTable {...records} />
+        <CreateRecord />
+
         <Link to={"/landing"}>
           <button onClick={logout2}>Sign Out</button>
         </Link>
-        <button onClick={createRecord}>Create post</button>
       </div>
     </div>
   );
 }
-
-const createRecord = async () => {
-  const heartRate = 72;
-  const systolic = 50;
-  const diastolic = 50;
-
-  const object = {
-    systolic,
-    diastolic,
-    heartRate,
-  };
-  await axios
-    .post(
-      "https://obscure-bayou-38424.herokuapp.com/records/" + session._id,
-      object,
-      {
-        withCredentials: false,
-      }
-    )
-    .then((res) => {
-      console.log(res.data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-};
 
 const getRecords = async (setRecords, session) => {
   await axios

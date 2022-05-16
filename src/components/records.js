@@ -19,8 +19,8 @@ const DynamicTable = (records) => {
           </thead>
 
           <tbody>
-            {recordsArray.map((emp) => (
-              <tr className="active-row">
+            {recordsArray.map((emp, index) => (
+              <tr key={index} className="active-row">
                 <td>{formatDate(emp.updatedAt)}</td>
                 <td>{emp.diastolic}</td>
                 <td>{emp.systolic}</td>
