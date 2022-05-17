@@ -4,7 +4,7 @@ import Header_home from "./Header_home";
 import axios from "axios";
 import Landing from "./Landing";
 import CreateRecord from "./CreateRecords";
-import DynamicTable from "./Records";
+import DynamicTable from "./DynamicTable";
 
 const logout2 = async () => {
   await axios
