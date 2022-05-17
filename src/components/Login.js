@@ -26,8 +26,6 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //https://obscure-bayou-38424.herokuapp.com liliia
-    //https://obscure-bayou-38424.herokuapp.com
     try {
       const response = await axios
         .post("https://obscure-bayou-38424.herokuapp.com/login", userToSend, {

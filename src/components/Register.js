@@ -7,11 +7,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-//import axios from "./api/axios";
 
 const PASSWORD_REGEX =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[-!@#$%]).{8,24}$/;
-//const PASSWORD_REGEX = /^(?=.*[a-z]).{2,24}$/;
 const REGISTER_URL = "/register";
 
 const Register = () => {
@@ -64,8 +62,6 @@ const Register = () => {
         .then((res) => {});
 
       setSuccess(true);
-      //clear state and controlled inputs
-      //need value attrib on inputs for this
       setEmail("");
       setPwd("");
       setFirstName("");
@@ -238,7 +234,6 @@ const Register = () => {
                 Do you have an account?
                 <br />
                 <span className="line">
-                  {/*put router link here*/}
                   <Link to={"/login"}>Sign In</Link>
                 </span>
               </p>

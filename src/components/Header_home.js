@@ -11,7 +11,6 @@ function Header_home() {
           "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       });
     <Landing />;
-    //sessionStorage.removeItem("mySession");
   };
   return (
     <div className="page">
