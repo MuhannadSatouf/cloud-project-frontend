@@ -80,7 +80,7 @@ const Login = () => {
           </div>
 
           <div className="main">
-            <section className="section">
+            <section className="login-section">
               <p
                 ref={errRef}
                 className={errMsg ? "errmsg" : "offscreen"}

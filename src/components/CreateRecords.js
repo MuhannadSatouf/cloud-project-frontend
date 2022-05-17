@@ -21,7 +21,6 @@ function createRecord() {
 const postNewRecord = async (session) => {
   const [heartRate, setHeartRate] = useState(0);
   setHeartRate();
-  console.log("value of heartRate" + heartRate);
 
   const object = {
     systolic,
@@ -36,9 +35,7 @@ const postNewRecord = async (session) => {
         withCredentials: false,
       }
     )
-    .then((res) => {
-      console.log(res.data);
-    })
+    .then((res) => {})
     .catch(function (error) {
       console.log(error);
     });

@@ -13,8 +13,22 @@ html, body {
   width: 100%;
 }
 
+html {
+  background: url("../resources/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 #root {
+  height: 100%;
+}
+
+.container {
+
+  display: flex;
+  flex-direction: column;
   height: 100%;
 }
 
@@ -29,8 +43,6 @@ html, body {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.8), #0d2530);
 
 }
-
-
 
 .icon {
   float: left;
@@ -83,15 +95,6 @@ ul li a:hover {
   flex-direction: column;
   margin-top: 250px;
   align-items: center;
-}
-
-.container {
-  background-image: url("../resources/background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
 }
 
 .section {
@@ -223,7 +226,45 @@ button {
   padding: 1rem;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.8), #0d2530);
 
+}
 
+.success-section {
+  border-radius: 20px;
+  min-height: 600px;
+
+  max-width: 420px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), #0d2530);
+}
+
+.register-section {
+  border-radius: 20px;
+  min-height: 600px;
+  width: 100%;
+  max-width: 420px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), #0d2530);
+}
+
+.login-section {
+  border-radius: 20px;
+  min-height: 600px;
+  width: 100%;
+  max-width: 520px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), #0d2530);
 }
 
 .welcome-text-div {
@@ -381,4 +422,81 @@ button {
   font-size: 20px;
   font-weight: bold;
   color: #ff7200;
+}
+
+
+
+.signout-button {
+  margin-bottom: 80px;
+}
+
+.name-date-div {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2px;
+}
+
+.userName {
+  margin-right: 80px;
+}
+
+.userName span {
+  color: #ff7200;
+}
+
+.todayDate span {
+  color: #ff7200;
+}
+
+.home-welcome-div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), #0d2530);
+  justify-content: center;
+  align-items: center;
+}
+
+.wishYou {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+
+.total-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.totalRecords {
+  margin-right: 50px;
+}
+
+
+.success-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

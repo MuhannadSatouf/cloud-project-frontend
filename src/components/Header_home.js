@@ -1,6 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 function Header_home() {
+  const logout = async () => {
+    await axios
+      .delete("https://obscure-bayou-38424.herokuapp.com/login", {
+        withCredentials: false,
+      })
+      .then(function (response) {
+        document.cookie =
+          "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      });
+    <Landing />;
+    //sessionStorage.removeItem("mySession");
+  };
   return (
     <div className="page">
       <div className="navbar">
@@ -12,7 +24,7 @@ function Header_home() {
         <div className="menu">
           <ul>
             <li>
-              <Link to={"/landing"}>About</Link>
+              <Link to={"/landing"}>About us</Link>
             </li>
           </ul>
         </div>

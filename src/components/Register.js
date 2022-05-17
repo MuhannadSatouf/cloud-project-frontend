@@ -52,8 +52,6 @@ const Register = () => {
       return;
     }
     const userToSend = { email, firstName, lastName, birthDate, password };
-    console.log("User object  " + userToSend);
-    //https://obscure-bayou-38424.herokuapp.com liliia
     try {
       const response = await axios
         .post(
@@ -63,9 +61,7 @@ const Register = () => {
             withCredentials: false,
           }
         )
-        .then((res) => {
-          console.log(res.data);
-        });
+        .then((res) => {});
 
       setSuccess(true);
       //clear state and controlled inputs
@@ -112,7 +108,7 @@ const Register = () => {
           </div>
 
           <div className="main">
-            <section className="section">
+            <section className="register-section">
               <p
                 ref={errRef}
                 className={errMsg ? "errmsg" : "offscreen"}
@@ -256,12 +252,20 @@ const Register = () => {
 
 const renderSection = () => {
   return (
-    <section className="section">
-      <h1>Success!</h1>
-      <p>
-        <Link to="/login">Sign In</Link>
-      </p>
-    </section>
+    <div className="success">
+      <section className="success-section">
+        <div className="success-div">
+          <div className="success-text">
+            <h1>Your registration is Succeed!</h1>
+          </div>
+          <div className="success-button">
+            <p>
+              <Link to="/login">Sign In</Link>
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 

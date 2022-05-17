@@ -19,7 +19,7 @@ function SliderComponent() {
   const [data, setData] = useState("");
   const postNewRecord = async () => {
     const session = JSON.parse(sessionStorage.getItem("mySession"));
-    console.log(session._id);
+
     const object = {
       systolic,
       diastolic,
@@ -35,7 +35,6 @@ function SliderComponent() {
         }
       )
       .then((res) => {
-        console.log(res.data);
         setData(res.data.verdict);
         setCreated(true);
       })
@@ -50,15 +49,13 @@ function SliderComponent() {
 
   const changeSystolic = (event, value) => {
     setSystolic(value);
-    console.log("systolic" + systolic);
   };
   const changeDiastolic = (event, value) => {
     setDiastolic(value);
-    console.log("diastolic" + diastolic);
   };
   const changeHeartRate = (event, value) => {
     setHeartRate(value);
-    console.log("heartRate" + heartRate);
+
     return heartRate;
   };
   return (
