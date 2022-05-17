@@ -52,7 +52,7 @@ function HomeComponent() {
           <p>Total Records: {totalRecords}</p>
         </div>
         <div className="totalUser">
-          <p>Total Users: {totalUsers}</p>
+          <p>Total User Records: {totalUsers}</p>
         </div>
       </div>
     );

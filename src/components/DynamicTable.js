@@ -69,7 +69,7 @@ const DynamicTable = (records) => {
 function formatDate(value) {
   const date = new Date(value);
   var day = date.getDate();
-  var month = date.getMonth();
+  var month = date.getMonth() + 1;
   var year = date.getFullYear();
 
   const formatDate = year + "-" + month + "-" + day;
