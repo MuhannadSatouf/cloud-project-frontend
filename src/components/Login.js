@@ -1,19 +1,14 @@
 import axios from "axios";
-import { useRef, useState, useEffect, Fragment } from "react";
+import { useRef, useState, useEffect } from "react";
 
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import HomeComponent from "./HomeComponent";
-
-const LOGIN_URL = "/login";
 
 const Login = () => {
   const errRef = useRef();
-  const checkLoginWithCookies = false;
   const [password, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
-  const [login, setLogin] = useState(false);
-
   const [email, setEmail] = useState("");
 
   axios.defaults.withCredentials = true;

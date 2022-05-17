@@ -5,7 +5,6 @@ import axios from "axios";
 import Landing from "./Landing";
 import CreateRecord from "./CreateRecords";
 import DynamicTable from "../components/Records";
-import CreateStatsDiv from "../components/TotalRecords";
 
 const logout2 = async () => {
   await axios
@@ -124,6 +123,5 @@ function HomeComponent() {
     </div>
   );
 }
-//"https://obscure-bayou-38424.herokuapp.com/records/"
 
 export default HomeComponent;

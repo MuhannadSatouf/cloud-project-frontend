@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/MuhannadSatouf/cloud-project-frontend/static/css/main.52b789c6.css",
-    "main.js": "/MuhannadSatouf/cloud-project-frontend/static/js/main.95ccc115.js",
-    "index.html": "/MuhannadSatouf/cloud-project-frontend/index.html",
-    "main.52b789c6.css.map": "/MuhannadSatouf/cloud-project-frontend/static/css/main.52b789c6.css.map",
-    "main.95ccc115.js.map": "/MuhannadSatouf/cloud-project-frontend/static/js/main.95ccc115.js.map"
+    "main.css": "./static/css/main.5ff1e481.css",
+    "main.js": "./static/js/main.b8e81481.js",
+    "static/media/background.jpg": "./static/media/background.e9c03c77a4dbc940effe.jpg",
+    "index.html": "./index.html",
+    "main.5ff1e481.css.map": "./static/css/main.5ff1e481.css.map",
+    "main.b8e81481.js.map": "./static/js/main.b8e81481.js.map"
   },
   "entrypoints": [
-    "static/css/main.52b789c6.css",
-    "static/js/main.95ccc115.js"
+    "static/css/main.5ff1e481.css",
+    "static/js/main.b8e81481.js"
   ]
 }

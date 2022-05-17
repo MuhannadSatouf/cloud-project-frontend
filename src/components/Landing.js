@@ -1,5 +1,3 @@
-import Login from "./Login";
-import Home from "./Home";
 import { Link } from "react-router-dom";
 
 const Landing = () => {
