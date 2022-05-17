@@ -1,5 +1,6 @@
 import HomeComponent from "./HomeComponent";
 import Login from "./Login";
+import { Navigate } from "react-router-dom";
 
 function getCookie(cname) {
   let name = cname + "=";
@@ -17,6 +18,12 @@ function getCookie(cname) {
 }
 function Home() {
   if (getCookie("email") !== "") {
+    <Navigate
+      to={{
+        pathname: "/home",
+      }}
+    />;
+
     return <HomeComponent />;
   }
   if (getCookie("email") === "") {

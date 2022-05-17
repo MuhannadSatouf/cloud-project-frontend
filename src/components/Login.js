@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRef, useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
+import Home from "./Home";
 import HomeComponent from "./HomeComponent";
 
 const Login = () => {
@@ -44,7 +45,6 @@ const Login = () => {
       } else {
         setErrMsg("Login Failed");
       }
-
       errRef.current.focus();
     }
   };
@@ -52,7 +52,7 @@ const Login = () => {
   return (
     <>
       {getCookie("email") !== "" && success ? (
-        <HomeComponent />
+        <Home />
       ) : (
         <>
           <div>
